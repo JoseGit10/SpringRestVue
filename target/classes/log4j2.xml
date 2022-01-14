@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<!-- 
+				%d = fecha y hora
+				%t = tiempo de hilo
+				%level = tipo de log a imprimir 
+				%c = nombre de la clase donde esta el log || los parentesis despues de c son para abreviar
+				%msg = mensaje del log 
+				%n = separador de linea
+				Los numeros son el margen para dar al LOG
+			 -->
+			<PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} [%t] %-5level %-50c{1.} %msg %n"/>
+		</Console>
+		<File name="File" fileName="ApiRestVue.log">
+			<PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss} [%t] %-5level %-50c{1.} %msg %n"/>
+		</File>
+	</Appenders>
+	
+	<Loggers>
+		<Root level="info">
+			<AppenderRef  ref="Console" />
+			<AppenderRef ref="File" />
+		</Root>
+	</Loggers>
+</Configuration>
